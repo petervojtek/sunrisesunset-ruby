@@ -20,6 +20,15 @@ Ruby Sunrise depends on the 'tzinfo' gem for localizing the computed sunrise/sun
 
 gem install RubySunrise
 
+== USAGE:
+
+    require 'solareventcalculator'
+    date = Date.parse('2013-04-07') 
+    calc = SolarEventCalculator.new(date, BigDecimal.new("48.1485"), BigDecimal.new("17.1067"))
+    if (calc.compute_utc_civil_sunset < Time.now.to_datetime)
+        puts "morning has broken"
+    end
+
 == LICENSE:
 
 Copyright 2008-2010 Mike Reedell / LuckyCatLabs.
