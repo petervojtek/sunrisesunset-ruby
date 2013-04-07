@@ -23,9 +23,10 @@ gem install RubySunrise
 == USAGE:
 
     require 'solareventcalculator'
-    date = Date.parse('2013-04-07') 
+    now = Time.now
+    date = Date.parse now.to_s 
     calc = SolarEventCalculator.new(date, BigDecimal.new("48.1485"), BigDecimal.new("17.1067"))
-    if (calc.compute_utc_civil_sunset < Time.now.to_datetime)
+    if (calc.compute_utc_civil_sunrise < now.to_datetime)
         puts "morning has broken"
     end
 
